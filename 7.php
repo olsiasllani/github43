@@ -17,6 +17,7 @@ $db = "databaza10A";
    PDO - Php Data Object
 Create Databaze
 
+/*
 try{
 
   $con = new PDO("mysql:host=$host;", $user, $password);
@@ -32,8 +33,8 @@ try{
   echo "Eshte Paraqit Error!".$e;
 }
 
-  
-*/
+ */
+
 
 // Create Table using PDO
 
@@ -49,25 +50,61 @@ $sql = "CREATE table users(id int NOT NULL AUTO_INCREMENT, name VARCHAR(20), sur
 } catch (Exception$e){
   echo $e;
 }
-
 */
 
-// Popullimi i tabelses (Vendosja e te dhanave ne tabele)
 
+
+ // Popullimi i tabeles (Vendosja e te dhanave ne tabele)
+/*
  try{
 
-  $con= new PDO("mysql:host=$host; dbname=$db", $user, $password);
+  $con = new PDO("mysql:host=$host; dbname=$db", $user, $password);
 
-   $sql "INSERT INTO users(name,surname,email,password)value("Filan","Fisteku","filanfisteku@gmail.com","12345678")";
+  $sql = "INSERT INTO users(name, surname, email, password) value('Filan', 'Fisteku', 'filanfisteku@gmail.com', '12345678')";
+
+  $con->exec($sql);
+
+  echo "Te dhenat u shtuan me sukses";
+
+ }catch (Exeption $e){
+  echo $e->getMessage();
+ }
+*/
+
+
+ //Delete table using PDO
+/*
+ try{
+  $con = new PDO("mysql:host=$host; dbname=$db" , $user, $password);
+
+    $sql = "DROP table users";
+
+    $con->exec($sql);
+
+    echo "Tabela u fshi me sukses!";
+
+ } catch (Execption $e){
+   echo $e;
+ }
+*/
+
+
+ // Delete column using PDO 
+/**/
+ try {
+
+  $con = new PDO("mysql:host=$host; dbname=$db", $user, $password);
+
+  $sql = "ALTER TABLE users DROP COLUMN surname";
 
    $con->exec($sql);
 
-   echo "Te dhenat u shtuan me sukses";
-
-
- }catch(Exeption $e){
-  echo $e->getMessage();
+  echo "Kolona u fshi me sukses";
+   
+ } catch (Exception $e) {
+   echo $e;
  }
+
 
   ?>
 
