@@ -1,0 +1,12 @@
+gjithe_studentat = ["Alice", "Bob", "Charlie", "David", "Eva", "Frank", "Grace"]
+
+
+studentat_regjistruar = ["Alice", "Charlie", "Eva"]
+
+
+for student in gjithe_studentat:
+    if student in studentat_regjistruar:
+        print(f"{student} jane regjistruar.")
+    else:
+        print(f"{student} nuk jane regjistruar.")
+CHALLENGE 
